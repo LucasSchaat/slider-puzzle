@@ -11,11 +11,11 @@ const Grid = (props) => {
             const newGrid = await createGrid()
             await setGrid(newGrid.matrix)
             await setWinner(newGrid.winningGrid)
-            console.log(document.querySelectorAll('.tile'))
-            const tiles = document.querySelectorAll('.tile')
-            tiles.forEach(element => {
-                element.style.backgroundImage = image
-            })
+            document.documentElement.style.setProperty('--matrix-size', props.matrixSide)
+            document.documentElement.style.setProperty('--dimensions', `${props.dimensions}px`)
+            // tiles.forEach(element => {
+            //     element.style.backgroundImage = image
+            // })
         }
         makeGrid()
     }, [])
@@ -195,7 +195,7 @@ const Grid = (props) => {
                                         onClick={() => move(rowIndex, index)}
                                         className={`tile`}
                                         key={`tile${index}`}
-                                        style={{backgroundPosition: `${(tile - 1)%props.matrixSide * -100}px ${Math.floor((tile - 1)/props.matrixSide)*-100}px`}}
+                                        style={{backgroundPosition: `${(tile - 1)%props.matrixSide * -(props.dimensions/props.matrixSide)}px ${Math.floor((tile - 1)/props.matrixSide) * -(props.dimensions/props.matrixSide)}px`}}
                                     >
                                         {tile}
                                     </div>

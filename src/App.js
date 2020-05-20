@@ -5,7 +5,7 @@ import Grid from './Components/Grid'
 function App() {
   return (
     <div className="App">
-      <Grid matrixSide={5} />
+      <Grid dimensions={1000} matrixSide={4} />
     </div>
   );
 }

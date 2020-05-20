@@ -1,4 +1,6 @@
 :root {
+  --dimensions: 500px;
+  --matrix-size: 2;
   --image: null;
 }
 
@@ -9,18 +11,19 @@
 
 .tile {
   background-color: whitesmoke;
-  color: white;
-  height: 100px;
-  width: 100px;
+  color: rgba(255, 255, 255, 0);
+  height: calc(var(--dimensions) / var(--matrix-size));
+  width: calc(var(--dimensions) / var(--matrix-size));
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url('https://images.unsplash.com/photo-1589377778631-73ae767b3413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');
-  background-size: 500px 500px;
+  background-size: var(--dimensions) var(--dimensions);
   background-repeat: no-repeat;
+  border: 2px solid white;
 }
 
-.tilesss {
+/* .tilesss {
   
   background-color: whitesmoke;
   color: black;
@@ -29,19 +32,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.imgz {
+/* .imgz {
   background-image: url('https://images.unsplash.com/photo-1589377778631-73ae767b3413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80');
   background-size: 500px 500px;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
 
-.display {
+/* .display {
   height: 500px;
   width: 500px;
-}
+} */
 
 .row {
   display: flex;
